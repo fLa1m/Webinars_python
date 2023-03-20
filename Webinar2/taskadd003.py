@@ -17,3 +17,16 @@ for i in range(1, num + 1):
     if num % i == 0:
         divisors.append(i)
 print(*divisors)
+
+# вывести только простые делители
+
+for i in range(2, num + 1):
+    if not num % i == 0:
+        continue
+    flag = True
+    for j in range(i - 1, 1, -1):
+        if i % j == 0:
+            flag = False
+            break
+    if flag:
+        print(i, end=" ")
