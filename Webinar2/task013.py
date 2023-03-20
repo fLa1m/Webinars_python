@@ -26,8 +26,8 @@ count = 0
 for i in temperature:
     if i > 0:
         count += 1
-    else:
         if count_days < count:
             count_days = count
+    else:
         count = 0
 print(f"Самая длинная оттепель: {count_days}")
