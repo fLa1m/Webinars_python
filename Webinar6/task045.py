@@ -15,34 +15,46 @@
 # 300       220 284
 
 
-def friendly_digits(num: int):
-    array = [_ for _ in range(num + 1)]
-    friend_numbers = set()
-    div_n = 0
-    div_m = 0
-    # print(array)
-    for n in range(len(array)):
-        # print(f"n={array[n]}")
-        for i in range(1, n):
-            # print(f"i={array[i]}")
-            if array[n] % array[i] == 0:
-                div_n += array[i]
-                # print(f"div_n={div_n}")
-        # print(f"-div_n={div_n}-")
-        m = div_n
-        for j in range(1, div_n):
-            # print(f"j={j}")
-            if div_n % j == 0:
-                div_m += j
-                # print(f"div_m={div_m}")
-            if div_m == n and m != n:
-                friend_numbers.add(n)
-                friend_numbers.add(div_n)
-        div_n = 0
-        div_m = 0
-        # print(f"div_n={div_n},div_m={div_m}")
-    print(friend_numbers)
+# def friendly_digits(num: int):
+#     array = [_ for _ in range(num + 1)]
+#     friend_numbers = set()
+#     div_n = 0
+#     div_m = 0
+#     # print(array)
+#     for n in range(len(array)):
+#         # print(f"n={array[n]}")
+#         for i in range(1, n):
+#             # print(f"i={array[i]}")
+#             if array[n] % array[i] == 0:
+#                 div_n += array[i]
+#                 # print(f"div_n={div_n}")
+#         # print(f"-div_n={div_n}-")
+#         m = div_n
+#         for j in range(1, div_n):
+#             # print(f"j={j}")
+#             if div_n % j == 0:
+#                 div_m += j
+#                 # print(f"div_m={div_m}")
+#             if div_m == n and m != n:
+#                 friend_numbers.add(n)
+#                 friend_numbers.add(div_n)
+#         div_n = 0
+#         div_m = 0
+#         # print(f"div_n={div_n},div_m={div_m}")
+#     print(friend_numbers)
+
+
+# k = int(input())
+# friendly_digits(k)
+
+
+def sum_dividers(n):
+    return sum(x for x in range(1, n // 2 + 1) if n % x == 0)
 
 
 k = int(input())
-friendly_digits(k)
+
+for i in range(1, k + 1):
+    potentially_friendly = sum_dividers(i)
+    if i < potentially_friendly and i == sum_dividers(potentially_friendly):
+        print(i, potentially_friendly)
