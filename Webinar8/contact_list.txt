@@ -1,0 +1,1 @@
+[{"first_name": "Иван", "second_name": "Иванов", "contacts": "123"}, {"first_name": "Петр", "second_name": "Петров", "contacts": "1234"}, {"first_name": "Иван", "second_name": "Петров", "contacts": "1235"}, {"first_name": "Петр", "second_name": "Иванов", "contacts": "12345"}, {"first_name": "Андрей", "second_name": "Мокин", "contacts": "909234"}]
