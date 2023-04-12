@@ -17,7 +17,7 @@ import json
 import os
 
 
-def find_contact(contacts: list) -> dict:
+def find_contact(contacts: list):
     what = input("Кого ищем?\n>>> ")
     found = list(
         filter(
@@ -42,7 +42,7 @@ def load_from_file():
         return data
 
 
-def save_to_file(contact: list) -> None:
+def save_to_file(contact: list):
     path = file_path()
 
     with open(path, "w", encoding="UTF-8") as file:
@@ -59,11 +59,7 @@ def show_on_screen(contacts: list):
     print(pretty_text)
 
 
-def create_contact():
-    pass
-
-
-def new_contact(contacts: list) -> None:
+def new_contact(contacts: list):
     contacts.append(
         dict(
             first_name=input("Введите имя контакта:\n>>> "),
@@ -94,7 +90,7 @@ def menu():
         return choice
 
 
-def main() -> None:
+def main():
     data = load_from_file()
 
     command = menu()
